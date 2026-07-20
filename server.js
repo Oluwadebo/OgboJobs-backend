@@ -31,6 +31,7 @@ app.use(
       "http://localhost:5173",
       process.env.ALLOWED_ORIGIN || "",
       process.env.NEXT_PUBLIC_APP_URL || "",
+      process.env.FRONTEND_URL || "",
     ].filter(Boolean),
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   }),
@@ -70,7 +71,7 @@ passport.use(
         done(null, user);
       } catch (err) {
         console.log(err);
-        
+
         done(err, null);
       }
     },
